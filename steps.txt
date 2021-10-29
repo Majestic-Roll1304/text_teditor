@@ -1,0 +1,1 @@
+file storage is simple using c but the problem i am facing is with backspacing the newline character
