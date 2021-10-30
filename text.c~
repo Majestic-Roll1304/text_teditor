@@ -1,0 +1,7 @@
+#include<stdio.h>
+int main()
+{
+  FILE *ptr=fopen("roshan.c","w");
+  fputc('\b',ptr);
+  fclose(ptr);
+}
