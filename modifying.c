@@ -3,32 +3,27 @@
 #include<fcntl.h>
 #include<unistd.h>
 
-int readmode(char *name)
+int editmode(char *name)
 {
-  int fd=open(name,O_RDONLY);
+  int fd=open(name,O_RDWR);
   return fd;
 }
+
 int createmode(char *name)
 {
-  int fd=open(name,O_CREAT);
+  //creating file with input name and mode rw_rw_rw which is general mode for text files
+  int fd=open(name,O_CREAT,00666);
   puts("created new file");
   return fd;
 }
 
-int writemode(char *name)
-{
-  int fd=open(name,O_WRONLY);
-  puts("created new file");
-  write(fd,"ls",2);
-  return fd;
-}
 int main(int argc, char **argv)
 {
   //check for arguments = 2
   if(argc==2)
     {
       //first try and open in read mode
-      if(readmode(argv[1])!=-1)
+      if(editmode(argv[1])!=-1)
 	{
 	  puts("the file exists");
 	}
