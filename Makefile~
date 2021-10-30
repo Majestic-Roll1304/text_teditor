@@ -1,4 +1,0 @@
-cc="gcc"
-
-a.out:
-	$(cc) main.c
