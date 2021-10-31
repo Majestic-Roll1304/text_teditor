@@ -1,3 +1,4 @@
+//same as main but changing here for testing during writing
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
