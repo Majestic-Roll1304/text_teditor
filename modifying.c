@@ -14,18 +14,6 @@ int getfilesize(int *fd)
   gotobegin(fd);
   return x;
 }
-/*
-int createbackup(int *fd,char *buff,int x)
-{
-  char newname[sizeof(argv[1])+1];
-  strcat(newname,"1");
-  printf("%s",newname);
-  int ptr=open(newname,O_CREAT);
-  if(ptr<0)
-    {
-      printf("error in creating backup");
-    }
-    }*/
 
 int edit(char *arg)
 {
