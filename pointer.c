@@ -10,3 +10,10 @@ int gotoend(int *fd)
 {
   return lseek(*fd,0,SEEK_END);
 }
+
+int getfilesize(int *fd)
+{
+  int x=gotoend(fd);
+  gotobegin(fd);
+  return x;
+}

@@ -1,1 +1,40 @@
-file storage is simple using c but the problem i am facing is with backspacing the newline character
+open file
+     [
+     if present
+     edit
+     ]
+     [
+     if doesn't exist
+     create
+     ]
+create backup
+       [
+       if newly created
+       no backup required
+       (have to make)
+       ]
+       [
+       if old file opened
+       make another file with  slight name change
+       read contents of file
+       write in backup file
+       (another method is to just rename the file name if it is possible in c)
+       ]
+
+edit buffer
+     [
+     to edit the string buffer and to display it while editing
+     (have to make)
+     ]
+
+write back
+      [
+      after editing is completed
+      create a file with original name(666 is the general permission for a text file)
+      write buffer contents to file
+      ]
+
+problem
+	[
+	not able to show the running edit mode as expected
+	]

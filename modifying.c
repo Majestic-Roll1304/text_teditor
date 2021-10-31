@@ -1,19 +1,10 @@
-//same as main but changing here for testing during writing
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
 #include<fcntl.h>
 #include<unistd.h>
-#include"pointer.c"
 //to change the location of the character pointer in the file
 //passing address to change the address of the original file descriptor
-
-int getfilesize(int *fd)
-{
-  int x=gotoend(fd);
-  gotobegin(fd);
-  return x;
-}
 
 int edit(char *arg)
 {
@@ -24,18 +15,21 @@ int edit(char *arg)
   char buffer[x];
   read(ptr,buffer,x);
   //adding a null character  to check if he file contents are changed or not
-  buffer[5]='\0';
   int f=strlen(buffer);
   char finalbuffer[f];
   sprintf(finalbuffer,"%s",buffer);
   lseek(ptr,0,SEEK_END);
   //to change a file im using remove and remake method till i get a better idea
   remove(arg);
-  ptr=open(arg,O_CREAT,00666);
   ptr=open(arg,O_WRONLY);
+  if(ptr<0){
+    ptr=open(arg,O_CREAT,00666);
+    ptr=open(arg,O_WRONLY);
+  }
   //have to make a method to change the buffer dynamically
   write(ptr,buffer,f);
-}  
+}
+
 int backup(char *arg,int x)
 {
   char newname[x+1];
