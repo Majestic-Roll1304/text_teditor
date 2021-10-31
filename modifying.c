@@ -14,7 +14,7 @@ int edit(char *arg)
   int x=getfilesize(&ptr);
   char buffer[x];
   read(ptr,buffer,x);
-  //adding a null character  to check if he file contents are changed or not
+  //i will insert edit function method here then f is the new buffer length cause i think i might need x(old buffer length)
   int f=strlen(buffer);
   char finalbuffer[f];
   sprintf(finalbuffer,"%s",buffer);
