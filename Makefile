@@ -7,6 +7,12 @@ mod: modifying.o pointer.o
 modify.o: modifying.c
 	$(cc) modifying.c -$(flag) 
 
+up: update.o
+	$(cc) update.o
+
+update.o:update.c
+	$(cc) update.c -$(flag)
+
 main: main.o pointer.o 
 	$(cc) main.o pointer.o
 
