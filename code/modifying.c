@@ -14,20 +14,15 @@ int edit(char *arg)
   int x=getfilesize(&ptr);
   char buffer[x];
   read(ptr,buffer,x);
-  //i will insert edit function method here then f is the new buffer length cause i think i might need x(old buffer length)
-  int f=strlen(buffer);
-  char finalbuffer[f];
-  sprintf(finalbuffer,"%s",buffer);
-  lseek(ptr,0,SEEK_END);
-  //to change a file im using remove and remake method till i get a better idea
   remove(arg);
+  ptr=open(arg,O_CREAT,00666);
   ptr=open(arg,O_WRONLY);
-  if(ptr<0){
-    ptr=open(arg,O_CREAT,00666);
-    ptr=open(arg,O_WRONLY);
-  }
+  int f=strlen(buffer);
+  //i will insert edit function method here then f is the new buffer length cause i think i might need x(old buffer length)
+  //felt to send the file pointer to the function rather than returning the whole buffer again here which i have to do a lot of work to pass the buffer by reference and edit it and write. 
+  realedit(buffer,f,ptr,arg);
+  //to change a file im using remove and remake method till i get a better idea
   //have to make a method to change the buffer dynamically
-  write(ptr,buffer,f);
 }
 
 int backup(char *arg,int x)

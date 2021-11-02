@@ -1,0 +1,4 @@
+modifying.c is the modifying version of main.c
+pointer.c has the required lseek functions required for main.c code
+update.c is used for changing the buffer read from the file and creating the new file deleting the old file and writing the buffer in it
+back.c is the backup of update.c
