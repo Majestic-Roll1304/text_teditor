@@ -19,10 +19,17 @@ int main()
 	{
 	  buffer[x--]='\0';
 	}
-      else 
+      else if(ch=='b')
 	{
 	  //if x is greater than the length  of the buffer stack  smashed error occurs
 	  //unable to print the \n correctly like a text editor
+	  //two days later the problem is solved :)
+	  buffer[(x++)+1]='\n';
+	}
+      else
+	{
+	  //adding the character if not a and b
+	  //now i have to find a way to take input character from backspace and enter key
 	  buffer[(x++)+1]=ch;
 	}
       system("clear");
