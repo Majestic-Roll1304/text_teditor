@@ -4,8 +4,8 @@ flag='c'
 mod: modifying.o pointer.o update.o
 	$(cc) modifying.o pointer.o update.o
 
-main: main.o pointer.o 
-	$(cc) main.o pointer.o
+main: main.o pointer.o update.o
+	$(cc) main.o pointer.o update.o
 
 main.o: main.c
 	$(cc) main.c -$(flag) 
