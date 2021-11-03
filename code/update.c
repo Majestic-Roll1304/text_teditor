@@ -26,7 +26,10 @@ int realedit(char *buff,int len,int fd)
       read(1,&ch,1);
       if(ch==127)
 	{
-	  buffer[x--]='\0';
+	  if(x>0)
+	    {
+	      buffer[x--]='\0';
+	    }
 	}
       else if(ch==13)
 	{

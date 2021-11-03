@@ -1,11 +1,21 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<stdio.h>
-int main()
+#include<fcntl.h>
+int main(int argc,char **argv)
 {
   char ch;
   system("/bin/stty raw");
-  read(1,&ch,1);
+  if(argc==2)
+    {
+      int ptr=open("thh",O_RDONLY);
+      lseek(ptr,0,SEEK_SET);
+      read(ptr,&ch,1);
+    }
+  else if(argc==1)
+    {
+      read(1,&ch,1);
+    }
   system("/bin/stty cooked");
   printf("%d",ch);
 }
