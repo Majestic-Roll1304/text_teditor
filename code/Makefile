@@ -18,3 +18,6 @@ modify.o: modifying.c
 
 update.o:update.c
 	$(cc) update.c -$(flag)
+
+remove:
+	rm *.o a.out

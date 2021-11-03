@@ -13,11 +13,11 @@ int realedit(char *buffer,int len,int fd,char *arg)
     {
       system("/bin/stty raw");
       read(1,&ch,1);
-      if(ch=='a')
+      if(ch==127)
 	{
 	  buffer[x--]='\0';
 	}
-      else if(ch=='b')
+      else if(ch==13)
 	{
 	  //if x is greater than the length  of the buffer stack  smashed error occurs
 	  //unable to print the \n correctly like a text editor
