@@ -36,5 +36,12 @@ write back
 
 problem
 	[
-	not able to show the running edit mode as expected
+	X->not able to show the running edit mode as expected
+	a random character is present in the newly created file (using an instruction to the user to first press a backspace before entering any text)
+	]
+
+
+solved
+	[
+	found a way to show it as vim but not as fast because using shell commands in between to convert type if IO in the shell
 	]

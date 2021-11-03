@@ -91,7 +91,9 @@ int main(int argc, char **argv)
       else
 	{
 	  puts("the file doesn't exist");
+	  puts("start editing by clicking backspace");
 	  createmode(argv[1]);
+	  edit(argv[1]);
 	}
     }
   else{

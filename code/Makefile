@@ -2,10 +2,10 @@ cc="gcc"
 flag='c'
 
 mod: modifying.o pointer.o update.o
-	$(cc) modifying.o pointer.o update.o
+	$(cc) modifying.o pointer.o update.o -o mod
 
-main: main.o pointer.o update.o
-	$(cc) main.o pointer.o update.o
+textflow: main.o pointer.o update.o
+	$(cc) main.o pointer.o update.o -o textflow
 
 main.o: main.c
 	$(cc) main.c -$(flag) 
@@ -20,4 +20,4 @@ update.o:update.c
 	$(cc) update.c -$(flag)
 
 remove:
-	rm *.o a.out
+	rm *.o 
