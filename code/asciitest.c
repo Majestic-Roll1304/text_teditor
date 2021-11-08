@@ -16,6 +16,7 @@ int main(int argc,char **argv)
     {
       read(1,&ch,1);
     }
-  system("/bin/stty cooked");
   printf("%d",ch);
+  system("/bin/stty cooked");
+
 }
