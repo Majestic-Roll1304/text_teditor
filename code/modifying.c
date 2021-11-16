@@ -12,8 +12,9 @@ int edit(char *arg)
   //this process is repeated many times i must modify it once the code works properly
   int ptr=open(arg,O_RDWR);
   int x=getfilesize(&ptr);
-  char buffer[x];
+  char buffer[x+1];
   read(ptr,buffer,x);
+  buffer[x+1]='\0';
   remove(arg);
   ptr=open(arg,O_CREAT,00666);
   ptr=open(arg,O_WRONLY);
