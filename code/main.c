@@ -13,6 +13,7 @@ int edit(char *arg)
   int ptr=open(arg,O_RDWR);
   int x=getfilesize(&ptr);
   char buffer[x];
+  system("clear");
   read(ptr,buffer,x);
   buffer[x]='\0';
   remove(arg);
