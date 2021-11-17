@@ -14,6 +14,7 @@ int edit(char *arg)
   int x=getfilesize(&ptr);
   char buffer[x];
   read(ptr,buffer,x);
+  buffer[x]='\0';
   remove(arg);
   ptr=open(arg,O_CREAT,00666);
   ptr=open(arg,O_WRONLY);
