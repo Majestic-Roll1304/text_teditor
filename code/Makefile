@@ -19,5 +19,8 @@ modify.o: modifying.c
 update.o:update.c
 	$(cc) update.c -$(flag)
 
-remove:
+remobj:
 	rm *.o 
+
+remall:
+	rm *.o mod textflow
