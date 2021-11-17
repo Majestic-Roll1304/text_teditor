@@ -8,4 +8,4 @@ now i have to know how to edit string and show it like vim or nano
 todo:
 ->everything works fine except usage of shell commands
 ->change the use of arrow keys their ascii is added as input in the file
-->the first character in the new file is a random character ,know the reason that causes that
+->all the arrow keys have the same ascii(find a way to do the arrow functions0
